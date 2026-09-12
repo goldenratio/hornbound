@@ -1,0 +1,49 @@
+{
+  "$schema": "./package.schema.json",
+  "name": "Hornbound",
+  "version": "0.0.5",
+  "description": "In this roguelike adventure, you play as a Unicorn on a quest to find the missing rainbows. Explore, survive, and collect them all!",
+  "gameMeta": {
+    "url_slug": "hornbound",
+    "exe_name": "hornbound",
+    "short_name": "Hornbound",
+    "background_color": "#2d3828",
+    "theme_color": "#84c669",
+    "orientation": "portrait",
+    "fullscreen_orientation": "portrait-primary"
+  },
+  "main": "src/main.ts",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf dist js dist.zip",
+    "type-check": "npm run gen:types && tsc --noEmit --skipLibCheck",
+    "dev": "npm run clean && npm run type-check && node ./build/dev.ts",
+    "node": "npm run build:node-dev && node ./js/main.cjs",
+    "gen:types": "node ./build/gen_types.ts",
+    "gen:gfx": "sheet --input-dir ./misc/gfx --output-dir ./res --meta-image-path-prefix '${RES_DIR}' --algorithm=max-rects && npm run gen:types",
+    "gen:sfx": "audiosprite -f howler2 -o ./res/sfx --path '${RES_DIR}' -e mp3 ./misc/sfx/*.* && npm run gen:types",
+    "build:dev": "npm run clean && npm run type-check && node ./build/build_web.ts --debug",
+    "build": "npm run clean && npm run type-check && node ./build/build_web.ts",
+    "build:node-dev": "npm run clean && npm run type-check && node ./build/build_node.ts --debug",
+    "build:node": "npm run clean && npm run type-check && node ./build/build_node.ts",
+    "build:native": "npm run clean && npm run type-check && node ./build/build_node.ts --sea",
+    "build:js13k": "./build/build_js13k.sh"
+  },
+  "author": "Karthik Jayakumar",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/google-closure-compiler": "20231112.0.0",
+    "@types/node": "26.5.0",
+    "esbuild": "0.28.2",
+    "google-closure-compiler": "20260831.0.0",
+    "html-minifier-next": "8.4.1",
+    "node-web-audio-api": "2.2.0",
+    "skia-canvas": "3.0.8",
+    "terser": "5.51.2",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "@goldenratio/core-utils": "0.0.9",
+    "@goldenratio/karlib": "0.0.21"
+  }
+}

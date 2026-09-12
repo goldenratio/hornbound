@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "lib": [ "ESNext", "DOM" ],
+    "types": [ "node" ],
+    "target": "esnext",
+    "rootDir": "./",
+    "outDir": "js",
+    "sourceMap": true,
+    "inlineSources": true,
+    // rules
+    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+  },
+  "include": [
+    "./src",
+    "./build"
+  ]
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- optional_start //-->
+  <title>${TITLE}</title>
+  <meta name="description" content="${DESCRIPTION}">
+  <meta name="theme-color" content="${THEME_COLOR}">
+
+  <link rel="manifest" href="${RES_DIR}manifest.json">
+  <link rel="icon" sizes="16x16" href="${RES_DIR}favicon-16x16.png">
+  <link rel="icon" sizes="32x32" href="${RES_DIR}favicon-32x32.png">
+  <link rel="icon" sizes="128x128" href="${RES_DIR}favicon-128x128.png">
+  <link rel="icon" sizes="196x196" href="${RES_DIR}favicon-196x196.png">
+
+  <!-- opengraph (social media perview) //-->
+  <meta name="title" content="${TITLE}">
+  <meta property="og:title" content="${TITLE}">
+  <meta property="og:site_name" content="${TITLE}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://labrat.mobi/games/${URL_SLUG}/">
+  <meta property="og:image" content="http://labrat.mobi/games/${URL_SLUG}/${RES_DIR_NO_PREFIX_PATH}favicon-256x256.png">
+  <meta property="og:description" content="${DESCRIPTION}">
+  <!-- optional_end //-->
+
+  <style>
+    html:fullscreen {
+      background: #000000;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      background: #000;
+      /* optional_start */
+      font-family: Roboto, Helvetica, 'Helvetica Neue', Verdana, Arial, serif;
+      /* optional_end */
+      color: #fff;
+      font-size: 13px;
+    }
+
+    /* optional_start */
+    #loader-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      text-align: center;
+      color: #a9a9a9;
+
+      display: none;
+    }
+
+    .loader-logo-img {
+      image-rendering: pixelated;
+    }
+
+    #loader-container div {
+      margin-bottom: 10px;
+    }
+
+    .loader {
+      height: 2px;
+      width: 100%;
+      --c: no-repeat linear-gradient(#ff9c1a 0 0);
+      background: var(--c), var(--c), #7b4f16;
+      background-size: 60% 100%;
+      animation: l16 3s infinite;
+    }
+
+    @keyframes l16 {
+      0% {
+        background-position: -150% 0, -150% 0
+      }
+
+      66% {
+        background-position: 250% 0, -150% 0
+      }
+
+      100% {
+        background-position: 250% 0, 250% 0
+      }
+    }
+
+    /* optional_end */
+  </style>
+</head>
+
+<body>
+  <!-- optional_start //-->
+  <div id="loader-container">
+    <div>
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARAAAAAYBAMAAADAAL//AAAAElBMVEUAAAD///8AAAD9rUTa2trBfylb2hNLAAAAAXRSTlMAQObYZgAAAURJREFUSMfNlmGuwiAQhAk3aE+wTn0X8N3AvBO8xPtfRWp3GbbEoKKR+UEKswxfUmgJWBVUEaYQkCU6bqV7gw6FncSFu0BFOEzTNGeQSTWHZJjSer+mU6parKMGHUpnM8OF2zNXmh1IRLZRREEKEARkEBpNEEgZXoKgBqGthsmvt7DTBKHEhZed4UGAwsaBIABBTlg2EOjobrPabAaKC2fnPohEZxMktQQJr4AwnJ03gaRJOurlZzdAOl9NPwjwxGatjy83axcIj++LIPIlkPrL+m6QMPyrGWazDgMyzHekCyQCkA4Q3CS1jWdBUnUN8uC/xsQZtdEP0v77tkHwQRAe3+NflkS258JIIJekrf0PP9omrWvq6KZ17g3kaBmMheWdkerYYW0LRMInQawWlES2qG7xNNhKvvnvT40VMbZxix8G5AqcjzEmXGuiUgAAAABJRU5ErkJggg=="
+        width="272" height="24" class="loader-logo-img" alt="labrat.mobi">
+    </div>
+    <div class="loader">
+    </div>
+    <div>
+      .loading // <span id="loader-status">code</span>
+    </div>
+  </div>
+  <!-- optional_end //-->
+  <script src="${RES_DIR}main.js" type="module"></script>
+  <!-- optional_start //-->
+  <script nomodule>
+    alert("Your web browser is outdated. Please update your browser to play this game.");
+  </script>
+  <!-- optional_end //-->
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+{
+  "short_name": "${SHORT_NAME}",
+  "name": "${TITLE}",
+  "start_url": "./../#/homescreen",
+  "icons": [
+    {
+      "src": "favicon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-196x196.png",
+      "sizes": "196x196",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "${BACKGROUND_COLOR}",
+  "theme_color": "${THEME_COLOR}",
+  "display": "fullscreen",
+  "orientation": "${ORIENTATION}"
+}
