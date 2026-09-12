@@ -6,7 +6,7 @@ Theme: Unicorns and Rainbows
 
 You can play the game at: https://labrat.mobi/games/hornbound/
 
-Game developed using: [karlib](https://github.com/goldenratio/karlib)
+Game developed using: [karlib](https://www.npmjs.com/package/@goldenratio/karlib)
 
 ## Requirements
 
